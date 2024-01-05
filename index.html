@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진법 변환기</title>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e8f4f8;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 720px; 
+            
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        input, select, button {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #dddddd;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        
+        .btn-outline-secondary {
+            background-color: #e7f1f8; 
+            border-color: #e7f1f8; 
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 22px; 
+            font-weight: bold; 
+            color: #d35400;
+        }
+
+        
+        input, select {
+            background-color: #f2f2f2;
+            color: #333333;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row mb-3">
+            <div class="col text-center">
+                <button class="btn btn-outline-secondary" onclick="setLanguage('en')">English</button>
+                <button class="btn btn-outline-secondary" onclick="setLanguage('ko')">Korean</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-lg-6 mx-auto"> 
+                <h1 id="title" class="text-center">진법 변환기</h1>
+                <div class="form-group">
+                    <input type="text" id="numberInput" class="form-control" placeholder="숫자 입력">
+                </div>
+                <div class="form-group">
+                    <select id="inputBase" class="form-control">
+                        <option value="2">2진수</option>
+                        <option value="8">8진수</option>
+                        <option value="10">10진수</option>
+                        <option value="16">16진수</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select id="outputBase" class="form-control">
+                        <option value="2">2진수</option>
+                        <option value="8">8진수</option>
+                        <option value="10">10진수</option>
+                        <option value="16">16진수</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="convert()">변환</button>
+                <div id="result" class="mt-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
